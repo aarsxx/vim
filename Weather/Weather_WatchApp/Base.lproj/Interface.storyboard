@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QeL-wL-thq">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Weather_WatchApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--InterfaceController-->
+        <scene sceneID="nuV-S8-Cuv">
+            <objects>
+                <controller identifier="InterfaceController" id="QeL-wL-thq" customClass="InterfaceController" customModule="Weather_WatchApp_Extension">
+                    <items>
+                        <label alignment="center" text="Location" textAlignment="center" id="0zC-br-eyS">
+                            <fontDescription key="font" type="system" pointSize="20"/>
+                        </label>
+                        <imageView alignment="center" id="55j-FF-Osr"/>
+                        <label alignment="center" text="Forecast" id="H3q-St-b7Y">
+                            <fontDescription key="font" type="system" pointSize="11"/>
+                        </label>
+                        <label height="50" alignment="center" text="Temp" id="sX0-0W-T6k"/>
+                    </items>
+                    <connections>
+                        <outlet property="forecastImage" destination="55j-FF-Osr" id="Ik8-vJ-Grk"/>
+                        <outlet property="forecastLabel" destination="H3q-St-b7Y" id="FZ5-ar-IqE"/>
+                        <outlet property="locationLabel" destination="0zC-br-eyS" id="nel-D4-UcZ"/>
+                        <outlet property="tempLabel" destination="sX0-0W-T6k" id="sgH-sU-qTF"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+    </scenes>
+</document>
